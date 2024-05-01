@@ -1,0 +1,44 @@
+[gd_scene load_steps=6 format=3 uid="uid://bbqq2bwxyxny1"]
+
+[ext_resource type="Script" path="res://testBox.gd" id="1_ajf1p"]
+[ext_resource type="Texture2D" uid="uid://dtxeagaurjs4u" path="res://icon.svg" id="1_wsjbs"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_psajv"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_0etrb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m3cjl"]
+size = Vector2(122.182, 130.977)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(553, 356)
+rotation = 0.570723
+scale = Vector2(3.52989, 4.03954)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+texture_repeat = 2
+material = SubResource("CanvasItemMaterial_psajv")
+polygon = PackedVector2Array(108, 42, 153.563, 7.40052, 131.568, -36.7425, 125.073, 1.61409, 92.9927, 18.4342, 78.5062, -4.03331, 64, 3, 60.2232, -1.42531, 54, -1, 50.8249, -7, -7, -7, -7, 41)
+
+[node name="testBox" type="Node" parent="."]
+script = ExtResource("1_ajf1p")
+
+[node name="RigidBody2D" type="RigidBody2D" parent="testBox"]
+texture_filter = 2
+position = Vector2(600, 1.99994)
+scale = Vector2(1.024, 1)
+disable_mode = 2
+physics_material_override = SubResource("PhysicsMaterial_0etrb")
+
+[node name="Sprite2D" type="Sprite2D" parent="testBox/RigidBody2D"]
+position = Vector2(0, 2.97692)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_wsjbs")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="testBox/RigidBody2D"]
+position = Vector2(-2.90909, 2.97674)
+scale = Vector2(0.25, 0.25)
+shape = SubResource("RectangleShape2D_m3cjl")
+one_way_collision_margin = 0.0
