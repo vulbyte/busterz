@@ -32,6 +32,7 @@ script/source = "extends CollisionPolygon2D;
 @onready var p_node_polys = PackedVector2Array();
 @onready var node_polys = PackedVector2Array();
 
+#here is a comment
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
